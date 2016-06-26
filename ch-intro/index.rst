@@ -18,12 +18,6 @@ Alright it's not made for writing notes or thesis. But J Terrace did write `a cu
 So I added bootstrap theme to sphinxtr. Checkout the `source <https://github.com/emptymalei/sphinx-notebook>`_.
 
 
-.. figure:: assets/images/sphinx-notebook.*
-   :alt: gitter badge
-   :target: https://gitter.im/emptymalei/sphinx-notebook
-   
-   
-
 
 
 .. admonition:: This is a Fork
