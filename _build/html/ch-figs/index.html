@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6 Figures and Tables &mdash; The Sphinx Notebook</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="The Sphinx Notebook" href="../index.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="5 References and Citations" href="../ch-refs/index.html" />
+
+<link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+<link rel="stylesheet" type="text/css" href="../_static/colorbox/colorbox.css" />
+
+<script type="text/javascript" src="../_static/colorbox/jquery.colorbox-min.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+	function endsWith(str, suffix) {
+	    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+	}
+
+    $(document).ready(function() {
+    	var im, imsrc;
+    	$('img').each(function() {
+    		im = $(this);
+    		imsrc = im.attr('src');
+    		imalt = im.attr('alt');
+    		if (endsWith(imsrc, 'svg')) {
+    			im.wrap($('<a>').attr({'href': imsrc, 'title': imalt}).addClass('svglink'));
+    		}
+    	});
+
+    	$('a.svglink').colorbox({
+    		'width': '95%',
+    		'height': '95%',
+    		'photo': true});
+    });
+</script>
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Sphinx Notebook</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="http://neuronstar.cc">NeuronStar</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dedication.html">Dedication</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../ch-intro/index.html">1 Why Sphinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch-intro/index.html#installation-and-usage">1.1 Installation and Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ch-typography/index.html">2 Typography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch-typography/headings.html">2.1 Headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-typography/text.html">2.2 Text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ch-lists/index.html">3 Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch-lists/index.html#unordered-lists">3.1 Unordered Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-lists/index.html#ordered-lists">3.2 Ordered Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-lists/index.html#description-lists">3.3 Description Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-lists/index.html#mixed">3.4 Mixed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ch-math/index.html">4 Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch-refs/index.html">5 References and Citations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch-refs/index.html#subsection">5.1 Subsection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-refs/index.html#citations">5.2 Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-refs/index.html#footnotes">5.3 Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch-refs/index.html#external-links">5.4 External Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6 Figures and Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vector-svg-figures">6.1 Vector SVG Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-figures">6.2 Image Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subfigures">6.3 Subfigures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">6.4 Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-wrapping-table">6.5 Text Wrapping Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#csv-and-list-tables">6.6 CSV and List Tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Bibliography</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">6 Figures and Tables</a><ul>
+<li><a class="reference internal" href="#vector-svg-figures">6.1 Vector SVG Figures</a></li>
+<li><a class="reference internal" href="#image-figures">6.2 Image Figures</a></li>
+<li><a class="reference internal" href="#subfigures">6.3 Subfigures</a></li>
+<li><a class="reference internal" href="#tables">6.4 Tables</a></li>
+<li><a class="reference internal" href="#text-wrapping-table">6.5 Text Wrapping Table</a></li>
+<li><a class="reference internal" href="#csv-and-list-tables">6.6 CSV and List Tables</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../ch-refs/index.html" title="Previous Chapter: 5 References and Citations"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 5 References ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../bibliography.html" title="Next Chapter: Bibliography"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Bibliography &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/ch-figs/index.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">6 Figures and Tables</a><ul>
+<li><a class="reference internal" href="#vector-svg-figures">6.1 Vector SVG Figures</a></li>
+<li><a class="reference internal" href="#image-figures">6.2 Image Figures</a></li>
+<li><a class="reference internal" href="#subfigures">6.3 Subfigures</a></li>
+<li><a class="reference internal" href="#tables">6.4 Tables</a></li>
+<li><a class="reference internal" href="#text-wrapping-table">6.5 Text Wrapping Table</a></li>
+<li><a class="reference internal" href="#csv-and-list-tables">6.6 CSV and List Tables</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="figures-and-tables">
+<span id="ch-figs"></span><h1>6 Figures and Tables<a class="headerlink" href="#figures-and-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vector-svg-figures">
+<h2>6.1 Vector SVG Figures<a class="headerlink" href="#vector-svg-figures" title="Permalink to this headline">¶</a></h2>
+<p>Vector figures are nicely supported. You should have a PDF file and an SVG
+file. The PDF will be used for the latex output and the SVG for the HTML
+output. The HTML output has a nice zoom feature using Colorbox.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-sirikata-overview"></span><a class="reference internal image-reference" href="../_images/overview.svg"><img alt="Sirikata System Overview" src="../_images/overview.svg" width="60%" /></a>
+<p class="caption"><span class="caption-text"><strong>Figure 6.1:</strong> The Sirikata metaverse platform architecture.</span></p>
+</div>
+<p>See an example in Figure&nbsp;<a href="#fig-sirikata-overview">6.2</a>. I suggest making
+figures in something like Inkscape. If you have only a vector PDF, you can use
+pdf2svg to convert (<code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">pdf2svg</span></code> or <code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">pdf2svg</span></code>).</p>
+</div>
+<div class="section" id="image-figures">
+<h2>6.2 Image Figures<a class="headerlink" href="#image-figures" title="Permalink to this headline">¶</a></h2>
+<p>Regular rasterized images work fine too.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-open3dhub-icons"></span><a class="reference internal image-reference" href="../_images/icons.png"><img alt="Open3DHub Browsing Interface" src="../_images/icons.png" style="width: 86.05%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Figure 6.3:</strong> The Open3DHub website allows browsing of 3D meshes.</span></p>
+</div>
+<p>A PNG example is shown in Figure&nbsp;<a href="#fig-open3dhub-icons">6.4</a>.</p>
+</div>
+<div class="section" id="subfigures">
+<h2>6.3 Subfigures<a class="headerlink" href="#subfigures" title="Permalink to this headline">¶</a></h2>
+<p>The subfigure directives allow you to place multiple figures side-by-side in
+the document. Here's an example:</p>
+<div class="figure compound align-center" id="fig-cc-teddy">
+<div style="width: 30%" class="subfigure align-center" id="id3">
+<span id="fig-cc-teddy-base"></span><a class="reference internal image-reference" href="../_images/teddy_0_128.png"><img alt="Base Mesh + 128x128 Texture (334 KB)" src="../_images/teddy_0_128.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(a)</strong> Base Mesh + 128x128 Texture (334 KB)</span></p>
+</div>
+<div style="width: 30%" class="subfigure align-center" id="id4">
+<span id="fig-cc-teddy-25"></span><a class="reference internal image-reference" href="../_images/teddy_25_256.png"><img alt="Base Mesh + 25% Stream + 256x256 Texture (568 KB)" src="../_images/teddy_25_256.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(c)</strong> Base Mesh + 25% Stream + 256x256 Texture (568 KB)</span></p>
+</div>
+<div style="width: 30%" class="subfigure align-center" id="id5">
+<span id="fig-cc-teddy-50"></span><a class="reference internal image-reference" href="../_images/teddy_50_512.png"><img alt="Base Mesh + 50% Stream + 512x512 Texture (923 KB)" src="../_images/teddy_50_512.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(e)</strong> Base Mesh + 50% Stream + 512x512 Texture (923 KB)</span></p>
+</div>
+<div style="width: 30%" class="subfigure align-center" id="id6">
+<span id="fig-cc-teddy-75"></span><a class="reference internal image-reference" href="../_images/teddy_75_1024.png"><img alt="Base Mesh + 75% Stream + 1024x1024 Texture (1755 KB)" src="../_images/teddy_75_1024.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(g)</strong> Base Mesh + 75% Stream + 1024x1024 Texture (1755 KB)</span></p>
+</div>
+<div style="width: 30%" class="subfigure align-center" id="id7">
+<span id="fig-cc-teddy-100"></span><a class="reference internal image-reference" href="../_images/teddy_100_2048.png"><img alt="Base Mesh + 100% Stream + 2048x2048 Texture (4385 KB)" src="../_images/teddy_100_2048.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(i)</strong> Base Mesh + 100% Stream + 2048x2048 Texture (4385 KB)</span></p>
+</div>
+<div style="width: 30%" class="subfigure align-center" id="id8">
+<span id="fig-cc-teddy-original"></span><a class="reference internal image-reference" href="../_images/teddy_orig.png"><img alt="Original Mesh (913 KB)" src="../_images/teddy_orig.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><strong>(k)</strong> Original Mesh (913 KB)</span></p>
+</div>
+<p class="caption"><span class="caption-text"><strong>Figure 6.5:</strong> Example of a teddy bear model at different resolutions of the
+progressive format (1 draw call) and its original format (16 draw
+calls). The size in KB assumes downloading progressively, e.g.,
+<a href="#fig-cc-teddy-100">6.5j</a>'s size includes lower-resolution textures.</span></p>
+</div><p id="fig-cc-teddy">You can reference the entire Figure&nbsp;<a href="#fig-cc-teddy">6.5</a> or one of its
+subfigures, e.g., Figure&nbsp;<a href="#fig-cc-teddy-original">6.5l</a>.</p>
+</div>
+<div class="section" id="tables">
+<h2>6.4 Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>Tables can be put inside the figtable directive which automatically numbers
+them, adds a caption, and adds a label.</p>
+<div class="figure align-center" id="table-cc-file-size">
+<center><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-right">Progressive</th>
+<th class="head align-right">128</th>
+<th class="head align-right">256</th>
+<th class="head align-right">512</th>
+<th class="head align-right">1024</th>
+<th class="head align-right">2048</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-right">0%</td>
+<td class="align-right">0.53</td>
+<td class="align-right">0.63</td>
+<td class="align-right">0.81</td>
+<td class="align-right">1.03</td>
+<td class="align-right">1.35</td>
+</tr>
+<tr class="row-odd"><td class="align-right">25%</td>
+<td class="align-right">0.65</td>
+<td class="align-right">0.75</td>
+<td class="align-right">0.97</td>
+<td class="align-right">1.16</td>
+<td class="align-right">1.45</td>
+</tr>
+<tr class="row-even"><td class="align-right">50%</td>
+<td class="align-right">0.74</td>
+<td class="align-right">0.85</td>
+<td class="align-right">1.02</td>
+<td class="align-right">1.26</td>
+<td class="align-right">1.58</td>
+</tr>
+<tr class="row-odd"><td class="align-right">75%</td>
+<td class="align-right">0.79</td>
+<td class="align-right">0.95</td>
+<td class="align-right">1.11</td>
+<td class="align-right">1.34</td>
+<td class="align-right">1.70</td>
+</tr>
+<tr class="row-even"><td class="align-right">100%</td>
+<td class="align-right">0.88</td>
+<td class="align-right">0.99</td>
+<td class="align-right">1.20</td>
+<td class="align-right">1.44</td>
+<td class="align-right">1.82</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.6:</strong> Mean size of progressive format as a fraction of the
+original across all test models, shown as a function of the
+progressive stream downloaded and texture resolution.</span></p>
+</center></div><p id="table-cc-file-size">Table&nbsp;<a href="#table-cc-file-size">6.6</a> has all right-aligned columns.</p>
+<div class="figure align-center" id="table-mixed-align">
+<center><table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-left">Left Align</th>
+<th class="head align-right">Right Align</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-left">Some text is left align</td>
+<td class="align-right">Followed by right-aligned</td>
+</tr>
+<tr class="row-odd"><td class="align-left">Some more text here</td>
+<td class="align-right">And more text here</td>
+</tr>
+<tr class="row-even"><td class="align-left">And even more text</td>
+<td class="align-right">Also even more text here</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.7:</strong> This table has mixed alignment</span></p>
+</center></div><p id="table-mixed-align">Table&nbsp;<a href="#table-mixed-align">6.7</a> has one column left-aligned and one
+column right-aligned.</p>
+<div class="figure align-center" id="table-no-fig">
+<center><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-right">Progressive</th>
+<th class="head align-right">128</th>
+<th class="head align-right">256</th>
+<th class="head align-right">512</th>
+<th class="head align-right">1024</th>
+<th class="head align-right">2048</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-right">0%</td>
+<td class="align-right">0.53</td>
+<td class="align-right">0.63</td>
+<td class="align-right">0.81</td>
+<td class="align-right">1.03</td>
+<td class="align-right">1.35</td>
+</tr>
+<tr class="row-odd"><td class="align-right">25%</td>
+<td class="align-right">0.65</td>
+<td class="align-right">0.75</td>
+<td class="align-right">0.97</td>
+<td class="align-right">1.16</td>
+<td class="align-right">1.45</td>
+</tr>
+<tr class="row-even"><td class="align-right">50%</td>
+<td class="align-right">0.74</td>
+<td class="align-right">0.85</td>
+<td class="align-right">1.02</td>
+<td class="align-right">1.26</td>
+<td class="align-right">1.58</td>
+</tr>
+<tr class="row-odd"><td class="align-right">75%</td>
+<td class="align-right">0.79</td>
+<td class="align-right">0.95</td>
+<td class="align-right">1.11</td>
+<td class="align-right">1.34</td>
+<td class="align-right">1.70</td>
+</tr>
+<tr class="row-even"><td class="align-right">100%</td>
+<td class="align-right">0.88</td>
+<td class="align-right">0.99</td>
+<td class="align-right">1.20</td>
+<td class="align-right">1.44</td>
+<td class="align-right">1.82</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.8:</strong> A table not inside a figure</span></p>
+</center></div><p id="table-no-fig">Some people don't like tables inside figures, so you can disable it with an
+argument to the figtable directive. A table not inside a figure is shown
+in <a href="#table-no-fig">6.8</a>. Note this only effects the latex output.</p>
+</div>
+<div class="section" id="text-wrapping-table">
+<h2>6.5 Text Wrapping Table<a class="headerlink" href="#text-wrapping-table" title="Permalink to this headline">¶</a></h2>
+<p>Text wrapping in tables work if you specify the width and either raggedleft or
+raggedright.</p>
+<div class="figure align-center" id="fig-open3dhub-cfs">
+<center><table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-right align-top">Column Family</th>
+<th class="head align-top">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-right align-top"><strong>Users</strong></td>
+<td class="align-top">Stores a list of users who have authenticated with OpenID.</td>
+</tr>
+<tr class="row-odd"><td class="align-right align-top"><strong>Names</strong></td>
+<td class="align-top">Stores a list of the 3D models in the database with their associated metadata.</td>
+</tr>
+<tr class="row-even"><td class="align-right align-top"><strong>TempFiles</strong></td>
+<td class="align-top">Temporarily stores the binary file data of uploaded files until they have been processed.</td>
+</tr>
+<tr class="row-odd"><td class="align-right align-top"><strong>Files</strong></td>
+<td class="align-top">Stores the binary file data for uploaded and verified files.</td>
+</tr>
+<tr class="row-even"><td class="align-right align-top"><strong>Sessions</strong></td>
+<td class="align-top">Stores HTTP session information used by the Django framework to look up session state associated with a user's browser cookie.</td>
+</tr>
+<tr class="row-odd"><td class="align-right align-top"><strong>OpenIdAssocs, OpenIdNonces</strong></td>
+<td class="align-top">Stores OpenID authentication information for users.</td>
+</tr>
+<tr class="row-even"><td class="align-right align-top"><strong>CeleryResults</strong></td>
+<td class="align-top">Stores the result of application processing tasks (see Section something).</td>
+</tr>
+<tr class="row-odd"><td class="align-right align-top"><strong>APIConsumers</strong></td>
+<td class="align-top">Stores a list of consumers of the API for use with the OAuth protocol.</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.9:</strong> A list of Open3DHub's Cassandra column families and their descriptions</span></p>
+</center></div><p id="fig-open3dhub-cfs">A text wrapping table example is shown in Figure&nbsp;<a href="#fig-open3dhub-cfs">6.9</a>.</p>
+</div>
+<div class="section" id="csv-and-list-tables">
+<h2>6.6 CSV and List Tables<a class="headerlink" href="#csv-and-list-tables" title="Permalink to this headline">¶</a></h2>
+<p>You can use CSV Table and List table from
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#tables">docutils directives</a>.</p>
+<div class="figure align-center" id="table-csv">
+<center><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-left align-top">Treat</th>
+<th class="head align-top">Quantity</th>
+<th class="head align-top">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-left align-top">Albatross</td>
+<td class="align-top">2.99</td>
+<td class="align-top">On a stick!</td>
+</tr>
+<tr class="row-odd"><td class="align-left align-top">Crunchy Frog</td>
+<td class="align-top">1.49</td>
+<td class="align-top">If we took the bones out, it wouldn't be
+crunchy, now would it?</td>
+</tr>
+<tr class="row-even"><td class="align-left align-top">Gannet Ripple</td>
+<td class="align-top">1.99</td>
+<td class="align-top">On a stick!</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.10:</strong> CSV table</span></p>
+</center></div><div class="figure align-center" id="table-list">
+<span id="table-csv"></span><center><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head align-left align-top">Treat</th>
+<th class="head align-top">Quantity</th>
+<th class="head align-top">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td class="align-left align-top">Albatross</td>
+<td class="align-top">2.99</td>
+<td class="align-top">On a stick!</td>
+</tr>
+<tr class="row-odd"><td class="align-left align-top">Crunchy Frog</td>
+<td class="align-top">1.49</td>
+<td class="align-top">If we took the bones out, it wouldn't be
+crunchy, now would it?</td>
+</tr>
+<tr class="row-even"><td class="align-left align-top">Gannet Ripple</td>
+<td class="align-top">1.99</td>
+<td class="align-top">On a stick!vvv</td>
+</tr>
+</tbody>
+</table>
+<p class="caption"><span class="caption-text"><strong>Figure 6.11:</strong> List table</span></p>
+</center></div><p id="table-list">A CSV table example is shown in Figure&nbsp;<a href="#table-csv">6.10</a> and List table in Figure&nbsp;<a href="#table-list">6.11</a>.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright by NeuronStar, 2016.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

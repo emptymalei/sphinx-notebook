@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sidebar Examples &mdash; The Sphinx Notebook</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.3.6/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="The Sphinx Notebook" href="../../../../index.html" />
+
+<link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
+<link rel="stylesheet" type="text/css" href="../../../../_static/colorbox/colorbox.css" />
+
+<script type="text/javascript" src="../../../../_static/colorbox/jquery.colorbox-min.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      }
+    }
+  });
+  </script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script type="text/javascript">
+	function endsWith(str, suffix) {
+	    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+	}
+
+    $(document).ready(function() {
+    	var im, imsrc;
+    	$('img').each(function() {
+    		im = $(this);
+    		imsrc = im.attr('src');
+    		imalt = im.attr('alt');
+    		if (endsWith(imsrc, 'svg')) {
+    			im.wrap($('<a>').attr({'href': imsrc, 'title': imalt}).addClass('svglink'));
+    		}
+    	});
+
+    	$('a.svglink').colorbox({
+    		'width': '95%',
+    		'height': '95%',
+    		'photo': true});
+    });
+</script>
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html">
+          Sphinx Notebook</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="http://neuronstar.cc">NeuronStar</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dedication.html">Dedication</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-intro/index.html">1 Why Sphinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-intro/index.html#installation-and-usage">1.1 Installation and Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-typography/index.html">2 Typography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-typography/headings.html">2.1 Headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-typography/text.html">2.2 Text</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-lists/index.html">3 Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-lists/index.html#unordered-lists">3.1 Unordered Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-lists/index.html#ordered-lists">3.2 Ordered Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-lists/index.html#description-lists">3.3 Description Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-lists/index.html#mixed">3.4 Mixed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-math/index.html">4 Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-refs/index.html">5 References and Citations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-refs/index.html#subsection">5.1 Subsection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-refs/index.html#citations">5.2 Citations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-refs/index.html#footnotes">5.3 Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-refs/index.html#external-links">5.4 External Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ch-figs/index.html">6 Figures and Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#vector-svg-figures">6.1 Vector SVG Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#image-figures">6.2 Image Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#subfigures">6.3 Subfigures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#tables">6.4 Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#text-wrapping-table">6.5 Text Wrapping Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ch-figs/index.html#csv-and-list-tables">6.6 CSV and List Tables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">Bibliography</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Sidebar Examples</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a><ul>
+<li><a class="reference internal" href="#sub-heading">Sub-Heading</a><ul>
+<li><a class="reference internal" href="#sub-sub-heading">Sub-Sub-Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#let-s-rock-some-lorem">Let's Rock Some Lorem!</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../../../_sources/_themes/sphinx-bootstrap-theme-full/demo/source/sidebar.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Sidebar Examples</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a><ul>
+<li><a class="reference internal" href="#sub-heading">Sub-Heading</a><ul>
+<li><a class="reference internal" href="#sub-sub-heading">Sub-Sub-Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#let-s-rock-some-lorem">Let's Rock Some Lorem!</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="sidebar-examples">
+<h1>Sidebar Examples<a class="headerlink" href="#sidebar-examples" title="Permalink to this headline">¶</a></h1>
+<p>This page demonstrates the use of a simple navigation sidebar.</p>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>This is a first level heading (<code class="docutils literal"><span class="pre">h1</span></code>).</p>
+<div class="section" id="sub-heading">
+<h3>Sub-Heading<a class="headerlink" href="#sub-heading" title="Permalink to this headline">¶</a></h3>
+<p>This is a second level heading (<code class="docutils literal"><span class="pre">h2</span></code>).</p>
+<div class="section" id="sub-sub-heading">
+<h4>Sub-Sub-Heading<a class="headerlink" href="#sub-sub-heading" title="Permalink to this headline">¶</a></h4>
+<p>This is a third level heading (<code class="docutils literal"><span class="pre">h3</span></code>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-rock-some-lorem">
+<h2>Let's Rock Some Lorem!<a class="headerlink" href="#let-s-rock-some-lorem" title="Permalink to this headline">¶</a></h2>
+<p>... and now some Lorem text so that we can check scrolling</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright by NeuronStar, 2016.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
