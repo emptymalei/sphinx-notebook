@@ -13,15 +13,27 @@ You know pandoc. It's fast, easy to use. But I want to generate everything with 
 
 "Check out the `Sphinx <http://www.sphinx-doc.org/>`_ project!"
 
-Alright it's not made for writing notes or thesis. But J Terrace did write `a customized version (called sphinxtr) <https://github.com/jterrace/sphinxtr>`_ with everything you need for a thesis project, out of the box. HOWEVER, the HTML theme is far too 'technical' (:strike:`plain and ugly`).
+Alright it's not made for writing notes or thesis. But J Terrace did write `a customized version (called sphinxtr) <https://github.com/jterrace/sphinxtr>`_ with everything you need for a thesis project, out of the box. However, the HTML theme is a little bit technical.
 
 So I added bootstrap theme to sphinxtr. Checkout the `source <https://github.com/emptymalei/sphinx-notebook>`_.
+
+
+.. figure:: assets/images/sphinx-notebook.*
+   :alt: gitter badge
+   :target: https://gitter.im/emptymalei/sphinx-notebook
+   
+   
+
 
 
 .. admonition:: This is a Fork
    :class: warning
    
    This is a fork of `sphinxtr <https://github.com/jterrace/sphinxtr>`_. Almost everything is from there. I only added `bootstrap theme <https://ryan-roemer.github.io/sphinx-bootstrap-theme/>`_ and did a few adjustments.
+   
+   Many thanks to the maintainers of these projects.
+
+
 
 
 Installation and Usage
