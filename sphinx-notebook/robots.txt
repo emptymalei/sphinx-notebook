@@ -1,0 +1,3 @@
+User-agent: *
+## Uncomment the following line to disallow search engines such as google from scraping your content; Uncomment means Removing the #
+#Disallow: /
